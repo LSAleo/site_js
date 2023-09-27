@@ -20,7 +20,7 @@ body {
   box-sizing: border-box;
   font-size: 10px;
 }
-
+/***************************************  DEBUT HEADER *****************************************/
 .header {
     position: fixed;
     top: 0;
@@ -54,6 +54,75 @@ body {
   .menu:hover {
     color: #008BCE;
   }
+/***************************************  FIN HEADER *****************************************/
+
+/***************************************  DEBUT BANDEAU *****************************************/
+  section.accueil{
+    background: url(Images/lacing-up-to-run.jpg) no-repeat; 
+    min-height: 100vh;  
+    background-size: cover;
+    background-position: center;
+    position:relative;
+  }
+  #titre1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    color: #A36656;
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 2%;
+  }
+
+/***************************************  FIN BANDEAU *****************************************/
+
+/***************************************  DEBUT CARDS ET FILTRE *****************************************/
+  .filter-form {
+    margin: 20px 0;
+}
+
+.filter-form label {
+    font-weight: bold;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #A36656;
+    padding: 10px;
+    width: calc(33.33% - 20px);
+}
+
+/* Styles pour chaque catégorie de carte */
+.categorie1 {
+    background-color: #008BCE;
+}
+
+.categorie2 {
+    background-color: #008BCE;
+}
+.categorie3 {
+    background-color: #008BCE;
+}
+
+.categorie4 {
+    background-color: #008BCE;
+}
+.categorie5 {
+    background-color: #008BCE;
+}
+
+.categorie6 {
+    background-color: #008BCE;
+}
+
+/***************************************  FIN CARDS ET FILTRE *****************************************/
 
 /***************************************  FOOTER *****************************************/
   footer {
