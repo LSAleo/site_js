@@ -18,7 +18,7 @@ body {
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 15px;
 }
 /***************************************  DEBUT HEADER *****************************************/
 .header {
@@ -79,7 +79,17 @@ body {
 /***************************************  FIN BANDEAU *****************************************/
 
 /***************************************  DEBUT CARDS ET FILTRE *****************************************/
-  .filter-form {
+  
+#filter {
+  border-radius: 5px; /* Vous pouvez ajuster la valeur selon votre préférence */
+  padding: 5px; /* Vous pouvez ajuster la marge interne selon votre préférence */
+  border: 1px solid #ccc; /* Vous pouvez personnaliser la couleur et l'épaisseur de la bordure */
+  background-color: #fff; /* Vous pouvez personnaliser la couleur de l'arrière-plan */
+  outline: none; /* Supprime la bordure bleue qui apparaît au focus */
+}
+
+
+.filter-form {
     margin: 20px 30px;
 }
 
@@ -100,29 +110,42 @@ body {
     border: 1px solid #A36656;
     padding: 10px;
     width: calc(33.33% - 20px);
+    border-radius: 20px;
+}
+
+.cat_course{
+    padding: 5px 0px;
+    color: #8E0D01;
+}
+
+.img_card{
+  border-radius: 20px;
+  max-width: 100%; /* Limite la largeur maximale de l'image à 100% de la largeur de son conteneur */
+  height: auto; /* Maintient le rapport hauteur/largeur de l'image pour éviter la distorsion */
+  /* display: block; Élimine l'espace vide sous l'image */
 }
 
 /* Styles pour chaque catégorie de carte */
 .categorie1 {
-    background-color: #008BCE;
+    background-color: #CCC;
 }
 
 .categorie2 {
-    background-color: #008BCE;
+    background-color: #CCC;
 }
 .categorie3 {
-    background-color: #008BCE;
+    background-color: #CCC;
 }
 
 .categorie4 {
-    background-color: #008BCE;
+    background-color: #CCC;
 }
 .categorie5 {
-    background-color: #008BCE;
+    background-color: #CCC;
 }
 
 .categorie6 {
-    background-color: #008BCE;
+    background-color: #CCC;
 }
 
 /***************************************  FIN CARDS ET FILTRE *****************************************/

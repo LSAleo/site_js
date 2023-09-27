@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".card");
 
     filterSelect.addEventListener("change", function() {
-        const selectedCategory = filterSelect.value;
+        const selectedCategories = filterSelect.value.split(' ');
 
         cards.forEach(card => {
             const categories = card.classList;
-            if (selectedCategory === "tous" || categories.contains(selectedCategory)) {
+            if (selectedCategories.includes("tous") || selectedCategories.some(category => categories.contains(category))) {
                 card.style.display = "block";
             } else {
                 card.style.display = "none";
