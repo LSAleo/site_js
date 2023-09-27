@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <link rel="website icon" type="png" href="Images/logo_test.png">
+    <title> Inscription </title>
+</head>
+<body>
+    <form id="registration-form">
+        <div>
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom">
+            <span class="error-message" id="nom-error">Le nom doit contenir uniquement des lettres.</span>
+        </div>
+
+        <div>
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="prenom">
+            <span class="error-message" id="prenom-error">Le prénom doit contenir uniquement des lettres.</span>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <span class="error-message" id="email-error">L'email n'est pas valide.</span>
+        </div>
+
+        <div>
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password">
+            <span class="error-message" id="password-error">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et avoir au moins 8 caractères.</span>
+        </div>
+
+        <div>
+            <label for="confirm-password">Confirmation du mot de passe:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+            <span class="error-message" id="confirm-password-error">Les mots de passe ne correspondent pas.</span>
+        </div>
+
+        <div>
+            <label>Date de naissance:</label>
+            <select id="jour" name="jour">
+                <!-- Options pour le jour (1 à 31) -->
+            </select>
+            <select id="mois" name="mois">
+                <!-- Options pour le mois (à partir d'un tableau JS) -->
+            </select>
+            <input type="text" id="annee" name="annee" placeholder="Année">
+            <span class="error-message" id="date-error">La date de naissance n'est pas valide.</span>
+        </div>
+
+        <div>
+            <label for="numero-rue">Numéro de rue:</label>
+            <input type="text" id="numero-rue" name="numero-rue">
+            <span class="error-message" id="numero-rue-error">Le numéro de rue doit contenir uniquement des chiffres.</span>
+        </div>
+
+        <div>
+            <label for="nom-rue">Nom de rue:</label>
+            <input type="text" id="nom-rue" name="nom-rue">
+            <span class="error-message" id="nom-rue-error">Le nom de rue doit contenir uniquement des lettres.</span>
+        </div>
+
+        <div>
+            <label for="code-postal">Code postal:</label>
+            <input type="text" id="code-postal" name="code-postal">
+            <span class="error-message" id="code-postal-error">Le code postal doit contenir 5 chiffres.</span>
+        </div>
+
+        <div>
+            <label for="ville">Ville:</label>
+            <input type="text" id="ville" name="ville">
+            <span class="error-message" id="ville-error">La ville doit contenir uniquement des lettres.</span>
+        </div>
+
+        <div>
+            <label>Courses déjà réalisées:</label>
+            <div id="courses-container">
+                <!-- Champs de course ajoutés dynamiquement -->
+            </div>
+            <button type="button" id="add-course">Ajouter une course</button>
+        </div>
+
+        <div>
+            <input type="checkbox" id="valid-checkbox" class="valid-checkbox">
+            <label for="valid-checkbox" class="valid-label">Formulaire valide</label>
+        </div>
+
+        <button type="submit">Valider</button>
+    </form>
+
+    <script src="form.js"></script>
+</body>
+</html>
