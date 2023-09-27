@@ -52,5 +52,58 @@ body {
   }
   
   .menu:hover {
-    color: skyblue;
+    color: #008BCE;
+  }
+
+/***************************************  FOOTER *****************************************/
+  footer {
+    background-color: #8E0D01;
+    color: #fff;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5%;
+    font-size: 15px;
+  }
+  .footer-colonne {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-colonne h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #008BCE;
+  }
+  
+  .footer-colonne ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-colonne ul li {
+    font-size: 15px;
+    padding: 1.5%;
+  }
+  
+  .footer-colonne ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  
+  .footer-colonne ul li a:hover {
+    color: #008BCE;
+  }
+  .logo_footer{
+    height: 130px;
+    width: 130px;
+  }
+
+  .div_sep{
+    height: 200px;
+    width: 500px;
+    background-color: black;
   }
