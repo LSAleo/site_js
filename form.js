@@ -12,6 +12,7 @@ const nomRueInput = document.getElementById("nom-rue");
 const codePostalInput = document.getElementById("code-postal");
 const villeInput = document.getElementById("ville");
 const addCourseButton = document.getElementById("add-course");
+const deleteCourseButton = document.getElementById("delete-course");
 const coursesContainer = document.getElementById("courses-container");
 const validCheckbox = document.getElementById("valid-checkbox");
 
@@ -248,8 +249,38 @@ document.getElementById('ville').addEventListener('blur', function () {
     }
 });
 
+/**************************** COURSE ****************************/
 
+// Fonction pour ajouter un champ d'écriture
+function ajouterChampEcriture() {
+    const coursesContainer = document.getElementById('courses-container');
 
+    // Créez un nouvel élément input de type texte
+    const inputCourse = document.createElement('input');
+    inputCourse.type = 'text';
+    inputCourse.name = 'course'; // Vous pouvez attribuer un nom approprié ici
+
+    // Ajoutez cet élément au conteneur
+    coursesContainer.appendChild(inputCourse);
+}
+
+// Fonction pour supprimer le dernier champ d'écriture
+function supprimerDernierChampEcriture() {
+    const coursesContainer = document.getElementById('courses-container');
+    const champsEcriture = coursesContainer.getElementsByTagName('input');
+
+    // Vérifiez s'il y a des champs à supprimer
+    if (champsEcriture.length > 0) {
+        // Supprimez le dernier champ d'écriture
+        coursesContainer.removeChild(champsEcriture[champsEcriture.length - 1]);
+    }
+}
+
+// Ajoutez un gestionnaire d'événement pour le bouton "Ajouter une course"
+document.getElementById('add-course').addEventListener('click', ajouterChampEcriture);
+
+// Ajoutez un gestionnaire d'événement pour le bouton "Supprimer une course"
+document.getElementById('delete-course').addEventListener('click', supprimerDernierChampEcriture);
 
 
 
