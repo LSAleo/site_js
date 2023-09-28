@@ -23,16 +23,11 @@ body {
 }
 
 .div_sep{
-    background-color: #cccccc;
+    background: url(Images/course.jpg) no-repeat;
     margin-top: 132px;
-  }
-
-
-
-.error-message {
-    display: none;
-    color: red;
+    padding: 10px 0px;
 }
+
 
 
 /***************************************  DEBUT HEADER *****************************************/
@@ -71,11 +66,69 @@ body {
   }
 /***************************************  FIN HEADER *****************************************/
 
-#registration-form{
-    max-width: 400px; /* Largeur maximale du formulaire */
-    margin: 0 auto; /* Centre le formulaire horizontalement */
-    padding: 20px; /* Espace intérieur autour du formulaire */
+#registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
+    flex-direction: column; /* Affiche les éléments en colonne */
+    border: 1px solid #8E0D01; /* Ajoute une bordure */
+    border-radius: 10px; /* Arrondit les bords du formulaire */
 }
+
+.div_form {
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column; /* Affiche les éléments en colonne */
+}
+
+.label {
+    margin-bottom: 5px; /* Ajoute un espace entre l'étiquette et le champ */
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Arrondit les bords des champs de texte et de sélection */
+    padding: 5px;
+    margin-bottom: 10px; /* Ajoute un espace entre les champs */
+}
+
+button {
+    border: none;
+    background-color: #A36656;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 300px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#valid-checkbox{
+    color: #20BF55;
+}
+
+.valid-label{
+    color: #20BF55;
+}
+
+#add-course{
+    margin-bottom: 10px;
+}
+
 
 
 /***************************************  FOOTER *****************************************/

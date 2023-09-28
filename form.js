@@ -98,20 +98,26 @@ passwordInput.addEventListener('blur', function () {
     }
 });
 
-// Fonction de gestionnaire d'événement pour la validation de la confirmation du mot de passe
 confirmPasswordInput.addEventListener('blur', function () {
     var confirmPasswordInput = this.value;
     var passwordInput = document.getElementById('password').value;
     var confirmPasswordError = document.getElementById('confirm-password-error');
 
-    function estConfirmValide(){
-        if (confirmPasswordInput !== passwordInput) {
-            confirmPasswordError.style.display = 'block';
-        } else {
-            confirmPasswordError.style.display = 'none';
-        }
+    if (confirmPasswordInput !== passwordInput) {
+        confirmPasswordError.style.display = 'block';
+    } else {
+        confirmPasswordError.style.display = 'none';
     }
+    
 });
+function estConfirmValide(){
+    
+    if (confirmPasswordInput !== passwordInput) {
+        confirmPasswordError.style.display = 'block';
+    } else {
+        confirmPasswordError.style.display = 'none';
+    }
+}
 
 /**************************** DATE DE NAISSANCE ****************************/
 
@@ -303,7 +309,7 @@ document.getElementById("bouton_submit").addEventListener('click', function () {
     const isVilleValid = validateVille();
     const isJourValide = estJourValide();
     const isMoisValide = estMoisValide();
-    const isAnneeValide = estAnneeValide();est
+    const isAnneeValide = estAnneeValide();
   
     if (
       isNomValid &&
@@ -320,9 +326,10 @@ document.getElementById("bouton_submit").addEventListener('click', function () {
       isAnneeValide
     ) {
       alert('Formulaire valide.');
-      /* Strictement rien :) */
+      document.getElementById("form_valide").style.display = 'block';
     } else {
       alert('Le formulaire contient des erreurs. Veuillez les corriger avant de soumettre.');
+      document.getElementById("form_valide").style.display = 'none';
     }
   });
 
@@ -338,9 +345,9 @@ document.getElementById("bouton_submit").addEventListener('click', function () {
 
 // Fonction pour mettre à jour l'affichage de l'indicateur de validation
 function mettreAJourIndicateurValidation() {
-    const validationIndicator = document.getElementById('validation-indicator');
+    const validationIndicator = document.getElementById('form_valide');
     const validCheckbox = document.getElementById('valid-checkbox');
-    const validLabel = document.querySelector('.valid-label');
+    const validLabel = document.getElementById('valid_label');
 
     if (estFormulaireValide()) {
         // Affichez l'indicateur de validation
@@ -348,6 +355,8 @@ function mettreAJourIndicateurValidation() {
     } else {
         // Masquez l'indicateur de validation
         validationIndicator.style.display = 'none';
+        validCheckbox.style.display = 'none';
+        validLabel.style.display = 'none';
     }
 }
 
