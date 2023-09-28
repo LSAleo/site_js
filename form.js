@@ -110,6 +110,78 @@ confirmPasswordInput.addEventListener('blur', function () {
     }
 });
 
+/**************************** DATE DE NAISSANCE ****************************/
+
+// Fonction pour vérifier si le jour est un chiffre de 1 à 31
+function estJourValide(jour) {
+    const jourInt = parseInt(jour, 10);
+    return !isNaN(jourInt) && jourInt >= 1 && jourInt <= 31;
+}
+
+// Fonction pour vérifier si le mois est valide
+function estMoisValide(mois) {
+    // Tableau des mois valides
+    const moisValides = [
+        'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet',
+        'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+    ];
+    return moisValides.includes(mois);
+}
+
+// Fonction pour vérifier si l'année est un nombre de 4 caractères
+function estAnneeValide(annee) {
+    return /^\d{4}$/.test(annee);
+}
+
+// Remplir la liste déroulante des mois
+const moisDropdown = document.getElementById('mois');
+const moisValides = [
+    'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet',
+    'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+];
+
+moisValides.forEach(function (mois) {
+    const option = document.createElement('option');
+    option.value = mois;
+    option.textContent = mois;
+    moisDropdown.appendChild(option);
+});
+
+// Fonction de gestionnaire d'événement pour la validation de la date de naissance
+document.getElementById('jour').addEventListener('blur', function () {
+    var jourInput = this.value;
+    var dateError = document.getElementById('date-error');
+
+    if (!estJourValide(jourInput)) {
+        dateError.style.display = 'block';
+    } else {
+        dateError.style.display = 'none';
+    }
+});
+
+document.getElementById('mois').addEventListener('blur', function () {
+    var moisInput = this.value;
+    var dateError = document.getElementById('date-error');
+
+    if (!estMoisValide(moisInput)) {
+        dateError.style.display = 'block';
+    } else {
+        dateError.style.display = 'none';
+    }
+});
+
+document.getElementById('annee').addEventListener('blur', function () {
+    var anneeInput = this.value;
+    var dateError = document.getElementById('date-error');
+
+    if (!estAnneeValide(anneeInput)) {
+        dateError.style.display = 'block';
+    } else {
+        dateError.style.display = 'none';
+    }
+});
+
+
 
 
 
