@@ -15,6 +15,107 @@ const addCourseButton = document.getElementById("add-course");
 const coursesContainer = document.getElementById("courses-container");
 const validCheckbox = document.getElementById("valid-checkbox");
 
+/**************************** NOM ET PRENOM ****************************/
+
+// Fonction pour vérifier si une chaîne contient uniquement des lettres
+function estUniquementLettres(chaine) {
+    return /^[a-zA-Z]+$/.test(chaine);
+}
+
+// Fonction de gestionnaire d'événement pour la validation du nom
+nomInput.addEventListener('blur', function () {
+    var nomInput = this.value;
+    var nomError = document.getElementById('nom-error');
+
+    if (!estUniquementLettres(nomInput)) {
+        nomError.style.display = 'block';
+    } else {
+        nomError.style.display = 'none';
+    }
+});
+
+// Fonction de gestionnaire d'événement pour la validation du prénom
+document.getElementById('prenom').addEventListener('blur', function () {
+    var prenomInput = this.value;
+    var prenomError = document.getElementById('prenom-error');
+
+    if (!estUniquementLettres(prenomInput)) {
+        prenomError.style.display = 'block';
+    } else {
+        prenomError.style.display = 'none';
+    }
+});
+
+/**************************** MAIL, MDP ET CONFIRMATION MDP ****************************/
+
+// Fonction pour vérifier si une adresse email est valide
+function estValideEmail(email) {
+    // Utilisez une expression régulière pour la validation de l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Fonction pour vérifier si un mot de passe répond aux critères requis
+function estValideMotDePasse(motDePasse) {
+    // Utilisez des expressions régulières pour vérifier les critères
+    const majusculeRegex = /[A-Z]/;
+    const minusculeRegex = /[a-z]/;
+    const chiffreRegex = /[0-9]/;
+    const caractereSpecialRegex = /[!@#$%^&*()_+[\]{};':"\\|,.<>/?]+/;
+    const longueurMinimale = 8;
+
+    return (
+        majusculeRegex.test(motDePasse) &&
+        minusculeRegex.test(motDePasse) &&
+        chiffreRegex.test(motDePasse) &&
+        caractereSpecialRegex.test(motDePasse) &&
+        motDePasse.length >= longueurMinimale
+    );
+}
+
+// Fonction de gestionnaire d'événement pour la validation de l'email
+emailInput.addEventListener('blur', function () {
+    var emailInput = this.value;
+    var emailError = document.getElementById('email-error');
+
+    if (!estValideEmail(emailInput)) {
+        emailError.style.display = 'block';
+    } else {
+        emailError.style.display = 'none';
+    }
+});
+
+// Fonction de gestionnaire d'événement pour la validation du mot de passe
+passwordInput.addEventListener('blur', function () {
+    var passwordInput = this.value;
+    var passwordError = document.getElementById('password-error');
+
+    if (!estValideMotDePasse(passwordInput)) {
+        passwordError.style.display = 'block';
+    } else {
+        passwordError.style.display = 'none';
+    }
+});
+
+// Fonction de gestionnaire d'événement pour la validation de la confirmation du mot de passe
+confirmPasswordInput.addEventListener('blur', function () {
+    var confirmPasswordInput = this.value;
+    var passwordInput = document.getElementById('password').value;
+    var confirmPasswordError = document.getElementById('confirm-password-error');
+
+    if (confirmPasswordInput !== passwordInput) {
+        confirmPasswordError.style.display = 'block';
+    } else {
+        confirmPasswordError.style.display = 'none';
+    }
+});
+
+
+
+
+
+
+/*
 // Validation de la date de naissance (jour, mois, année)
 function validateDate() {
     const jour = parseInt(jourInput.value, 10);
@@ -26,10 +127,31 @@ function validateDate() {
         jourInput.classList.add("error");
         document.getElementById("date-error").textContent = "Le jour doit être entre 1 et 31.";
         return false;
+    }else{
+
     }
 
     // Vérification du mois (utilisez votre tableau de moisOptions)
-    const moisOptions = ["Janvier", "Février", /* ... autres mois ... */];
+    const moisOptions = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+
+    const moisSelect = document.getElementById("mois");
+for (let i = 0; i < moisOptions.length; i++) {
+    const option = document.createElement("option");
+    option.value = moisOptions[i];
+    option.textContent = moisOptions[i];
+    moisSelect.appendChild(option);
+}
+
+// Remplissage des options pour le champ de jour (de 1 à 31)
+const jourSelect = document.getElementById("jour");
+for (let i = 1; i <= 31; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = i;
+    jourSelect.appendChild(option);
+}
+
     if (!moisOptions.includes(mois)) {
         moisInput.classList.add("error");
         document.getElementById("date-error").textContent = "Le mois n'est pas valide.";
@@ -69,12 +191,12 @@ addCourseButton.addEventListener("click", function () {
 // Gestionnaire d'événement pour la soumission du formulaire
 form.addEventListener("submit", function (e) {
     e.preventDefault(); // Empêcher la soumission par défaut
-
+    const isDateValid = validateDate();
     // Ajoutez ici la logique de validation pour chaque champ du formulaire.
     // Appliquez les classes CSS appropriées et affichez les messages d'erreur si nécessaire.
 
     // Exemple pour afficher la checkbox verte :
-    if (validationRéussie) {
+    if (isDateValid &&  autres champs valides) {
         validCheckbox.checked = true;
     }
-});
+});*/

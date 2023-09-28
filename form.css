@@ -1,23 +1,4 @@
 .error-message {
+    display: none;
     color: red;
-    margin-left: 10px;
-    display: none;
-    transition: margin-left 0.5s;
-}
-
-.valid-label {
-    color: green;
-}
-
-.valid-checkbox {
-    display: none;
-    color: green;
-}
-
-.error-input {
-    border: 1px solid red;
-}
-
-.valid-input {
-    border: 1px solid green;
 }
