@@ -104,10 +104,12 @@ confirmPasswordInput.addEventListener('blur', function () {
     var passwordInput = document.getElementById('password').value;
     var confirmPasswordError = document.getElementById('confirm-password-error');
 
-    if (confirmPasswordInput !== passwordInput) {
-        confirmPasswordError.style.display = 'block';
-    } else {
-        confirmPasswordError.style.display = 'none';
+    function estConfirmValide(){
+        if (confirmPasswordInput !== passwordInput) {
+            confirmPasswordError.style.display = 'block';
+        } else {
+            confirmPasswordError.style.display = 'none';
+        }
     }
 });
 
@@ -282,99 +284,78 @@ document.getElementById('add-course').addEventListener('click', ajouterChampEcri
 // Ajoutez un gestionnaire d'événement pour le bouton "Supprimer une course"
 document.getElementById('delete-course').addEventListener('click', supprimerDernierChampEcriture);
 
+/**************************** CHECKBOX ****************************/
 
 
+// Fonction pour vérifier si le formulaire est valide
+function estFormulaireValide() {
+    /**************************** VALIDATION FORMULAIRE ****************************/
 
-
-
-
-
-
-
-
-
-/*
-// Validation de la date de naissance (jour, mois, année)
-function validateDate() {
-    const jour = parseInt(jourInput.value, 10);
-    const mois = moisInput.value;
-    const annee = anneeInput.value;
-
-    // Vérification du jour
-    if (jour < 1 || jour > 31 || isNaN(jour)) {
-        jourInput.classList.add("error");
-        document.getElementById("date-error").textContent = "Le jour doit être entre 1 et 31.";
-        return false;
-    }else{
-
+document.getElementById("bouton_submit").addEventListener('click', function () {
+    const isNomValid = estUniquementLettres();
+    const isPrenomValid = estUniquementLettres();
+    const isEmailValid = estValideEmail();
+    const isPasswordValid = estValideMotDePasse();
+    const isConfirmPasswordValid = estConfirmValide();
+    const isNumeroRueValid = estUniquementChiffres();
+    const isNomRueValid = estUniquementLettres();   
+    const isCodePostalValid = estCodePostalValide();
+    const isVilleValid = validateVille();
+    const isJourValide = estJourValide();
+    const isMoisValide = estMoisValide();
+    const isAnneeValide = estAnneeValide();est
+  
+    if (
+      isNomValid &&
+      isPrenomValid &&
+      isEmailValid &&
+      isPasswordValid &&
+      isConfirmPasswordValid &&
+      isNumeroRueValid &&
+      isNomRueValid &&
+      isCodePostalValid &&
+      isVilleValid &&
+      isJourValide &&
+      isMoisValide &&
+      isAnneeValide
+    ) {
+      alert('Formulaire valide.');
+      /* Strictement rien :) */
+    } else {
+      alert('Le formulaire contient des erreurs. Veuillez les corriger avant de soumettre.');
     }
+  });
 
-    // Vérification du mois (utilisez votre tableau de moisOptions)
-    const moisOptions = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-
-    const moisSelect = document.getElementById("mois");
-for (let i = 0; i < moisOptions.length; i++) {
-    const option = document.createElement("option");
-    option.value = moisOptions[i];
-    option.textContent = moisOptions[i];
-    moisSelect.appendChild(option);
-}
-
-// Remplissage des options pour le champ de jour (de 1 à 31)
-const jourSelect = document.getElementById("jour");
-for (let i = 1; i <= 31; i++) {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = i;
-    jourSelect.appendChild(option);
-}
-
-    if (!moisOptions.includes(mois)) {
-        moisInput.classList.add("error");
-        document.getElementById("date-error").textContent = "Le mois n'est pas valide.";
-        return false;
+    const messagesErreur = document.getElementsByClassName('error-message');
+    for (const messageErreur of messagesErreur) {
+        if (messageErreur.style.display === 'block') {
+            return false;
+        }
     }
-
-    // Vérification de l'année
-    if (annee.length !== 4 || isNaN(annee)) {
-        anneeInput.classList.add("error");
-        document.getElementById("date-error").textContent = "L'année doit avoir 4 chiffres.";
-        return false;
-    }
-
-    // Si tout est valide, retirez les classes d'erreur et effacez le message d'erreur
-    jourInput.classList.remove("error");
-    moisInput.classList.remove("error");
-    anneeInput.classList.remove("error");
-    document.getElementById("date-error").textContent = "";
+    
     return true;
 }
 
-// Validation du mot de passe
-function validatePassword() {
-    const password = passwordInput.value;
-    const confirmPassword = confirmPasswordInput.value;
+// Fonction pour mettre à jour l'affichage de l'indicateur de validation
+function mettreAJourIndicateurValidation() {
+    const validationIndicator = document.getElementById('validation-indicator');
+    const validCheckbox = document.getElementById('valid-checkbox');
+    const validLabel = document.querySelector('.valid-label');
 
-    // Ajoutez ici la logique de validation du mot de passe
-    // Assurez-vous que le mot de passe respecte les critères spécifiés et qu'il correspond à la confirmation.
+    if (estFormulaireValide()) {
+        // Affichez l'indicateur de validation
+        validationIndicator.style.display = 'block';
+    } else {
+        // Masquez l'indicateur de validation
+        validationIndicator.style.display = 'none';
+    }
 }
 
-// Gestionnaire d'événement pour le bouton "Ajouter une course"
-addCourseButton.addEventListener("click", function () {
-    // Ajoutez ici la logique pour créer un champ de course dynamique
-    // dans le coursesContainer.
+// Écoutez les événements de soumission du formulaire et les événements d'entrée utilisateur pour mettre à jour l'indicateur de validation
+const myForm = document.getElementById('my-form');
+myForm.addEventListener('submit', mettreAJourIndicateurValidation);
+
+const formInputs = myForm.querySelectorAll('input');
+formInputs.forEach(input => {
+    input.addEventListener('input', mettreAJourIndicateurValidation);
 });
-
-// Gestionnaire d'événement pour la soumission du formulaire
-form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Empêcher la soumission par défaut
-    const isDateValid = validateDate();
-    // Ajoutez ici la logique de validation pour chaque champ du formulaire.
-    // Appliquez les classes CSS appropriées et affichez les messages d'erreur si nécessaire.
-
-    // Exemple pour afficher la checkbox verte :
-    if (isDateValid &&  autres champs valides) {
-        validCheckbox.checked = true;
-    }
-});*/

@@ -1,4 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  font-size: 15px;
+  margin-top: 60px;
+}
+
+.div_sep{
+    background-color: #cccccc;
+    margin-top: 132px;
+  }
+
+
+
 .error-message {
     display: none;
     color: red;
 }
+
+
+/***************************************  DEBUT HEADER *****************************************/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8E0D01;
+    z-index: 100;
+  }
+
+  .header >img{
+    width :100px;
+    height: auto;
+  }
+
+  .menu {
+    position: relative;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.13px;
+    text-decoration: none;
+    margin-left: 2.5rem;
+    transition: all 0.5s ease;
+  }
+  
+  .menu:hover {
+    color: #008BCE;
+  }
+/***************************************  FIN HEADER *****************************************/
+
+#registration-form{
+    max-width: 400px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    padding: 20px; /* Espace intérieur autour du formulaire */
+}
+
+
+/***************************************  FOOTER *****************************************/
+footer {
+    background-color: #8E0D01;
+    color: #fff;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5%;
+    font-size: 15px;
+  }
+  .footer-colonne {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-colonne h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #008BCE;
+  }
+  
+  .footer-colonne ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-colonne ul li {
+    font-size: 15px;
+    padding: 1.5%;
+  }
+  
+  .footer-colonne ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  
+  .footer-colonne ul li a:hover {
+    color: #008BCE;
+  }
+  .logo_footer{
+    height: 130px;
+    width: 130px;
+  }
