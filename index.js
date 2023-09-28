@@ -15,3 +15,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+/***************************************  DEBUT COOKIES *****************************************/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cookiePopup = document.getElementById("cookiePopup");
+    const acceptButton = document.getElementById("acceptButton");
+
+    // Check if the user has already accepted cookies
+    const hasAcceptedCookies = localStorage.getItem("cookie_rgpd");
+
+    // If not, display the popup
+    if (!hasAcceptedCookies) {
+        cookiePopup.style.display = "block";
+    }
+
+    // Event listener for the accept button
+    acceptButton.addEventListener("click", function () {
+        // Set a cookie in the user's browser
+        localStorage.setItem("cookie_rgpd", "true");
+
+        // Hide the popup
+        cookiePopup.style.display = "none";
+    });
+});
+
+/***************************************  FIN COOKIES *****************************************/

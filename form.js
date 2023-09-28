@@ -15,6 +15,16 @@ const addCourseButton = document.getElementById("add-course");
 const deleteCourseButton = document.getElementById("delete-course");
 const coursesContainer = document.getElementById("courses-container");
 const validCheckbox = document.getElementById("valid-checkbox");
+const popcorn = document.getElementById("popcorn_check");
+const popcorn2 = document.getElementById("popcorn_check2");
+const popcorn3 = document.getElementById("popcorn_check3");
+const popcorn4 = document.getElementById("popcorn_check4");
+const popcorn5 = document.getElementById("popcorn_check5");
+const popcorn6 = document.getElementById("popcorn_check6");
+const popcorn7 = document.getElementById("popcorn_check7");
+const popcorn8 = document.getElementById("popcorn_check8");
+const popcorn9 = document.getElementById("popcorn_check9");
+const popcorn10 = document.getElementById("popcorn_check10");
 
 /**************************** NOM ET PRENOM ****************************/
 
@@ -30,8 +40,13 @@ nomInput.addEventListener('blur', function () {
 
     if (!estUniquementLettres(nomInput)) {
         nomError.style.display = 'block';
+        popcorn.style.color = 'red';
+        popcorn.style.zIndex = '9999';
+        popcorn.style.display = 'none';
     } else {
         nomError.style.display = 'none';
+        popcorn.style.color = '#20BF55';
+        popcorn.style.display = 'block';
     }
 });
 
@@ -42,8 +57,13 @@ document.getElementById('prenom').addEventListener('blur', function () {
 
     if (!estUniquementLettres(prenomInput)) {
         prenomError.style.display = 'block';
+        popcorn2.style.color = 'red';
+        popcorn2.style.zIndex = '9999';
+        popcorn2.style.display = 'none';
     } else {
         prenomError.style.display = 'none';
+        popcorn2.style.color = '#20BF55';
+        popcorn2.style.display = 'block';
     }
 });
 
@@ -81,8 +101,13 @@ emailInput.addEventListener('blur', function () {
 
     if (!estValideEmail(emailInput)) {
         emailError.style.display = 'block';
+        popcorn3.style.color = 'red';
+        popcorn3.style.zIndex = '9999';
+        popcorn3.style.display = 'none';
     } else {
         emailError.style.display = 'none';
+        popcorn3.style.color = '#20BF55';
+        popcorn3.style.display = 'block';
     }
 });
 
@@ -93,8 +118,13 @@ passwordInput.addEventListener('blur', function () {
 
     if (!estValideMotDePasse(passwordInput)) {
         passwordError.style.display = 'block';
+        popcorn4.style.color = 'red';
+        popcorn4.style.zIndex = '9999';
+        popcorn4.style.display = 'none';
     } else {
         passwordError.style.display = 'none';
+        popcorn4.style.color = '#20BF55';
+        popcorn4.style.display = 'block';
     }
 });
 
@@ -105,8 +135,13 @@ confirmPasswordInput.addEventListener('blur', function () {
 
     if (confirmPasswordInput !== passwordInput) {
         confirmPasswordError.style.display = 'block';
+        popcorn5.style.color = 'red';
+        popcorn5.style.zIndex = '9999';
+        popcorn5.style.display = 'none';
     } else {
         confirmPasswordError.style.display = 'none';
+        popcorn5.style.color = '#20BF55';
+        popcorn5.style.display = 'block';
     }
     
 });
@@ -114,8 +149,13 @@ function estConfirmValide(){
     
     if (confirmPasswordInput !== passwordInput) {
         confirmPasswordError.style.display = 'block';
+        popcorn5.style.color = 'red';
+        popcorn5.style.zIndex = '9999';
+        popcorn5.style.display = 'none';
     } else {
         confirmPasswordError.style.display = 'none';
+        popcorn5.style.color = '#20BF55';
+        popcorn5.style.display = 'block';
     }
 }
 
@@ -163,8 +203,13 @@ document.getElementById('jour').addEventListener('blur', function () {
 
     if (!estJourValide(jourInput)) {
         dateError.style.display = 'block';
+        popcorn6.style.color = 'red';
+        popcorn6.style.zIndex = '9999';
+        popcorn6.style.display = 'none';
     } else {
         dateError.style.display = 'none';
+        popcorn6.style.color = '#20BF55';
+        popcorn6.style.display = 'block';
     }
 });
 
@@ -174,8 +219,13 @@ document.getElementById('mois').addEventListener('blur', function () {
 
     if (!estMoisValide(moisInput)) {
         dateError.style.display = 'block';
+        popcorn6.style.color = 'red';
+        popcorn6.style.zIndex = '9999';
+        popcorn6.style.display = 'none';
     } else {
         dateError.style.display = 'none';
+        popcorn6.style.color = '#20BF55';
+        popcorn6.style.display = 'block';
     }
 });
 
@@ -185,8 +235,13 @@ document.getElementById('annee').addEventListener('blur', function () {
 
     if (!estAnneeValide(anneeInput)) {
         dateError.style.display = 'block';
+        popcorn6.style.color = 'red';
+        popcorn6.style.zIndex = '9999';
+        popcorn6.style.display = 'none';
     } else {
         dateError.style.display = 'none';
+        popcorn6.style.color = '#20BF55';
+        popcorn6.style.display = 'block';
     }
 });
 
@@ -216,8 +271,13 @@ numeroRueInput.addEventListener('blur', function () {
 
     if (!estUniquementChiffres(numeroRueInput)) {
         numeroRueError.style.display = 'block';
+        popcorn7.style.color = 'red';
+        popcorn7.style.zIndex = '9999';
+        popcorn7.style.display = 'none';
     } else {
         numeroRueError.style.display = 'none';
+        popcorn7.style.color = '#20BF55';
+        popcorn7.style.display = 'block';
     }
 });
 
@@ -228,8 +288,13 @@ document.getElementById('nom-rue').addEventListener('blur', function () {
 
     if (!estUniquementLettres(nomRueInput)) {
         nomRueError.style.display = 'block';
+        popcorn8.style.color = 'red';
+        popcorn8.style.zIndex = '9999';
+        popcorn8.style.display = 'none';
     } else {
         nomRueError.style.display = 'none';
+        popcorn8.style.color = '#20BF55';
+        popcorn8.style.display = 'block';
     }
 });
 
@@ -240,8 +305,13 @@ document.getElementById('code-postal').addEventListener('blur', function () {
 
     if (!estCodePostalValide(codePostalInput)) {
         codePostalError.style.display = 'block';
+        popcorn9.style.color = 'red';
+        popcorn9.style.zIndex = '9999';
+        popcorn9.style.display = 'none';
     } else {
         codePostalError.style.display = 'none';
+        popcorn9.style.color = '#20BF55';
+        popcorn9.style.display = 'block';
     }
 });
 
@@ -252,8 +322,13 @@ document.getElementById('ville').addEventListener('blur', function () {
 
     if (!estUniquementLettres(villeInput)) {
         villeError.style.display = 'block';
+        popcorn10.style.color = 'red';
+        popcorn10.style.zIndex = '9999';
+        popcorn10.style.display = 'none';
     } else {
         villeError.style.display = 'none';
+        popcorn10.style.color = '#20BF55';
+        popcorn10.style.display = 'block';
     }
 });
 

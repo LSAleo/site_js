@@ -25,31 +25,36 @@
     <form id="registration-form">
         <div class="div_form">
             <label for="nom">Nom:</label>
-            <input type="text" id="nom" name="nom">
+            <input type="text" id="nom" name="nom" class="fontAwesome" placeholder="&#xf007; Veuillez indiquer votre nom">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check"></i></span>
             <span class="error-message" id="nom-error">Le nom doit contenir uniquement des lettres.</span>
         </div>
 
         <div class="div_form">
             <label for="prenom">Prénom:</label>
-            <input type="text" id="prenom" name="prenom">
+            <input type="text" id="prenom" name="prenom" class="fontAwesome" placeholder="&#xf007; Veuillez indiquer votre prénom">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check2"></i></span>
             <span class="error-message" id="prenom-error">Le prénom doit contenir uniquement des lettres.</span>
         </div>
 
         <div class="div_form">
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email">
+            <input type="text" id="email" name="email" class="fontAwesome" placeholder="&#xf0e0; Veuillez entrer votre adresse email">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check3"></i></span>
             <span class="error-message" id="email-error">L'email n'est pas valide.</span>
         </div>
 
         <div class="div_form">
             <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" class="fontAwesome" placeholder="&#xf023; Choisissez un mot de passe">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check4"></i></span>
             <span class="error-message" id="password-error">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre, un caractère spécial et avoir au moins 8 caractères.</span>
         </div>
 
         <div class="div_form">
             <label for="confirm-password">Confirmation du mot de passe:</label>
-            <input type="password" id="confirm-password" name="confirm-password">
+            <input type="password" id="confirm-password" name="confirm-password" class="fontAwesome" placeholder="&#xf023; Veuillez confirmer votre mot de passe">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check5"></i></span>
             <span class="error-message" id="confirm-password-error">Les mots de passe ne correspondent pas.</span>
         </div>
 
@@ -90,31 +95,36 @@
             </select>
             <select id="mois" name="mois">
             </select>
-            <input type="text" id="annee" name="annee" placeholder="Année">
+            <input type="text" id="annee" name="annee" class="fontAwesome" placeholder="&#xf784; Année">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check6"></i></span>
             <span class="error-message" id="date-error">La date de naissance n'est pas valide.</span>
         </div>
 
         <div class="div_form">
             <label for="numero-rue">Numéro de rue:</label>
             <input type="text" id="numero-rue" name="numero-rue">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check7"></i></span>
             <span class="error-message" id="numero-rue-error">Le numéro de rue doit contenir uniquement des chiffres.</span>
         </div>
 
         <div class="div_form">
             <label for="nom-rue">Nom de rue:</label>
             <input type="text" id="nom-rue" name="nom-rue">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check8"></i></span>
             <span class="error-message" id="nom-rue-error">Le nom de rue doit contenir uniquement des lettres.</span>
         </div>
 
         <div class="div_form">
             <label for="code-postal">Code postal:</label>
             <input type="text" id="code-postal" name="code-postal">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check9"></i></span>
             <span class="error-message" id="code-postal-error">Le code postal doit contenir 5 chiffres.</span>
         </div>
 
         <div class="div_form">
             <label for="ville">Ville:</label>
             <input type="text" id="ville" name="ville">
+            <span><i class="fa-solid fa-circle-check" id="popcorn_check10"></i></span>
             <span class="error-message" id="ville-error">La ville doit contenir uniquement des lettres.</span>
         </div>
 
@@ -127,10 +137,6 @@
             <button type="button" id="delete-course">Supprimer une course</button>
         </div>
 
-        <div class="div_form" id="form_valide">
-            <i class="fa-solid fa-square-check" id="valid-checkbox"></i>
-            <label for="valid-checkbox" class="valid-label" id="valid_label">Formulaire valide</label>
-        </div>
 
         <button type="submit" id="bouton_submit">Valider</button>
     </form>

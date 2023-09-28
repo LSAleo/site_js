@@ -78,7 +78,6 @@ body {
 }
 
 .div_form {
-    padding: 5px 0px;
     display: flex;
     flex-direction: column; /* Affiche les éléments en colonne */
 }
@@ -112,9 +111,9 @@ button {
 }
 
 .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 #valid-checkbox{
@@ -122,14 +121,37 @@ button {
 }
 
 .valid-label{
-    color: #20BF55;
+  color: #20BF55;
+}
+
+#popcorn_check, #popcorn_check2, #popcorn_check3, #popcorn_check4, #popcorn_check5, #popcorn_check6, #popcorn_check7, #popcorn_check8, #popcorn_check9, #popcorn_check10{
+  color: red;
 }
 
 #add-course{
-    margin-bottom: 10px;
+  margin: 10px 29px;
 }
 
+#delete-course{
+  margin-bottom: 50px;
+  margin-left: 29px;
+  margin-right: 29px;
+}
 
+#bouton_submit{
+  margin: 0px auto;
+  color: #008BCE;
+  background-color: white;
+}
+
+#bouton_submit:hover{
+  color: #20BF55;
+  background-color: black;
+}
+
+.fontAwesome {
+    font-family: Helvetica, 'FontAwesome', sans-serif;
+  }
 
 /***************************************  FOOTER *****************************************/
 footer {
