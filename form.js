@@ -182,6 +182,81 @@ document.getElementById('annee').addEventListener('blur', function () {
 });
 
 
+/**************************** ADRESSE ****************************/
+
+
+// Fonction pour vérifier si une chaîne contient uniquement des chiffres
+function estUniquementChiffres(chaine) {
+    return /^\d+$/.test(chaine);
+}
+
+// Fonction pour vérifier si une chaîne contient uniquement des lettres
+function estUniquementLettres(chaine) {
+    return /^[A-Za-z\s]+$/.test(chaine);
+}
+
+// Fonction pour vérifier si le code postal est composé de 5 chiffres
+function estCodePostalValide(codePostal) {
+    return /^\d{5}$/.test(codePostal);
+}
+
+// Fonction de gestionnaire d'événement pour la validation du numéro de rue
+numeroRueInput.addEventListener('blur', function () {
+    var numeroRueInput = this.value;
+    var numeroRueError = document.getElementById('numero-rue-error');
+
+    if (!estUniquementChiffres(numeroRueInput)) {
+        numeroRueError.style.display = 'block';
+    } else {
+        numeroRueError.style.display = 'none';
+    }
+});
+
+// Fonction de gestionnaire d'événement pour la validation du nom de rue
+document.getElementById('nom-rue').addEventListener('blur', function () {
+    var nomRueInput = this.value;
+    var nomRueError = document.getElementById('nom-rue-error');
+
+    if (!estUniquementLettres(nomRueInput)) {
+        nomRueError.style.display = 'block';
+    } else {
+        nomRueError.style.display = 'none';
+    }
+});
+
+// Fonction de gestionnaire d'événement pour la validation du code postal
+document.getElementById('code-postal').addEventListener('blur', function () {
+    var codePostalInput = this.value;
+    var codePostalError = document.getElementById('code-postal-error');
+
+    if (!estCodePostalValide(codePostalInput)) {
+        codePostalError.style.display = 'block';
+    } else {
+        codePostalError.style.display = 'none';
+    }
+});
+
+// Fonction de gestionnaire d'événement pour la validation de la ville
+document.getElementById('ville').addEventListener('blur', function () {
+    var villeInput = this.value;
+    var villeError = document.getElementById('ville-error');
+
+    if (!estUniquementLettres(villeInput)) {
+        villeError.style.display = 'block';
+    } else {
+        villeError.style.display = 'none';
+    }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
